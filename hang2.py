@@ -13,24 +13,18 @@ choword = word_file.readlines()
 word = random.choice(choword)
 wordl = len(word)
 
-
 print("Let's play a game of hangman your word is " + str(wordl) + " letter's long guess a letter!")
+print("_" * wordl)
+word_guess = input("-> ")
 
-print("_"*wordl)
-
-word_guess = input("--> ")
-
-while numguesses < 6:
-    if word_guess == word:
-
-        print("you win")
-        break
-    elif word_guess in word:
-        print("leter is in the word")
+while numguesses < 8:
+    
+    if word_guess in word:
+        print(word_guess)
         word_guess = input("--> ")
 
     else:
-        print("Wrong guess again")
+        print("_")
         numguesses += 1
         word_guess = input("--> ")
 print("you lose")
